@@ -7,6 +7,8 @@ public enum RoleEnum {
 
     INVITED,
 
-    DEVELOPER
+    DEVELOPER,
+    REFACTOR
+
 
 }
