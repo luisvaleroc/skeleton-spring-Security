@@ -62,30 +62,14 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationProvider authenticationProvider() {
+    public AuthenticationProvider authenticationProvider(UserDetailsService userDetailsService) {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
 
         provider.setPasswordEncoder(passwordEncoder());
-        provider.setUserDetailsService(userDetailsService());
+        provider.setUserDetailsService(userDetailsService);
         return provider;
     }
 
-    @Bean
-    public UserDetailsService userDetailsService(){
-        List<UserDetails> userDetailsList = new ArrayList<>();
-
-        userDetailsList.add(User.withUsername("luis")
-                .password("123456")
-                .roles("ADMIN")
-                .authorities("READ", "CREATE")
-                .build());
-        userDetailsList.add(User.withUsername("Dani")
-                .password("123456")
-                .roles("USER")
-                .authorities("READ")
-                .build());
-        return new InMemoryUserDetailsManager(userDetailsList);
-    }
 
     @Bean
     public PasswordEncoder passwordEncoder(){
