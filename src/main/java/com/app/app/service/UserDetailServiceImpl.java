@@ -1,5 +1,7 @@
 package com.app.app.service;
 
+import com.app.app.controllers.dto.AuthLoginRequest;
+import com.app.app.controllers.dto.AuthResponse;
 import com.app.app.persistense.entity.UserEntity;
 import com.app.app.persistense.entity.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +46,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
                 userEntity.isAccountNoLocked(),
                 authorityList
                 );
+    }
+
+    public AuthResponse loginUser(AuthLoginRequest authLoginRequest){
+        return null;
     }
 }
