@@ -15,6 +15,7 @@ public class TeskAuth2Controller {
     }
 
     @PostMapping("/post")
+    @PreAuthorize("hasAnyAuthority('CREATE') or hasAnyAuthority('READ')")
     public String helloPost() {
         return "Hello from POST method";
     }
@@ -25,7 +26,15 @@ public class TeskAuth2Controller {
     }
 
     @DeleteMapping("/delete")
+    @PreAuthorize("hasAnyAuthority('CREATE')")
     public String helloDelete() {
+        return "Hello from DELETE method";
+
+    }
+
+    @PatchMapping("/patch")
+    @PreAuthorize("hasAnyAuthority('REFACTOR')")
+    public String helloPatch() {
         return "Hello from DELETE method";
 
     }

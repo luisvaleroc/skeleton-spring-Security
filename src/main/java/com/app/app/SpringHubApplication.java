@@ -62,8 +62,8 @@ public class SpringHubApplication {
 
 			/*Create USERS*/
 			UserEntity userAdmin = UserEntity.builder()
-					.username("Admin")
-					.password("1234")
+					.username("admin")
+					.password("$2a$10$Y09Z6GoOx2CRbMGhz7iVyu/3NGnkD6Fxn38aPA9m11Zq/QJdIvlM2")
 					.isEnabled(true)
 					.accountNoExpired(true)
 					.accountNoLocked(true)
@@ -73,7 +73,7 @@ public class SpringHubApplication {
 
 			UserEntity userNormal = UserEntity.builder()
 					.username("user")
-					.password("1234")
+					.password("$2a$10$Y09Z6GoOx2CRbMGhz7iVyu/3NGnkD6Fxn38aPA9m11Zq/QJdIvlM2")
 					.isEnabled(true)
 					.accountNoExpired(true)
 					.accountNoLocked(true)
@@ -83,7 +83,7 @@ public class SpringHubApplication {
 
 			UserEntity userInvited = UserEntity.builder()
 					.username("invited")
-					.password("1234")
+					.password("$2a$10$Y09Z6GoOx2CRbMGhz7iVyu/3NGnkD6Fxn38aPA9m11Zq/QJdIvlM2")
 					.isEnabled(true)
 					.accountNoExpired(true)
 					.accountNoLocked(true)
@@ -93,7 +93,7 @@ public class SpringHubApplication {
 
 			UserEntity userDeveloper = UserEntity.builder()
 					.username("developer")
-					.password("1234")
+					.password("$2a$10$Y09Z6GoOx2CRbMGhz7iVyu/3NGnkD6Fxn38aPA9m11Zq/QJdIvlM2")
 					.isEnabled(true)
 					.accountNoExpired(true)
 					.accountNoLocked(true)
