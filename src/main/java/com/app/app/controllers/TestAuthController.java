@@ -18,7 +18,7 @@ public class TestAuthController {
     }
 
     @GetMapping("/hello-secured")
-    @PreAuthorize("hasAnyAuthority('READ')")
+    @PreAuthorize("hasAnyAuthority('REFACTOR')")
     public  String helloSecured(){
         return "hello world secured";
     }
