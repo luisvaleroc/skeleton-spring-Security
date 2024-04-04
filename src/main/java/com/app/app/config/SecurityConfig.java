@@ -48,12 +48,13 @@ public class SecurityConfig {
                     //configurar endpoints privados
                     http.requestMatchers(HttpMethod.GET, "/method/**").hasAuthority("READ");
                     //configurar endpoiints no especificados
-                   // http.anyRequest().denyAll();
+                   http.anyRequest().denyAll();
                 })
+
                 .exceptionHandling(configurer -> configurer
                         .authenticationEntryPoint(authenticationEntryPoint())
                         .accessDeniedHandler(accessDeniedHandler()))
-                .authorizeHttpRequests(http -> http.anyRequest().denyAll())
+
                 .addFilterBefore(new JwtTokenValidator(jwtUtils), BasicAuthenticationFilter.class)
                 .build();
     }
